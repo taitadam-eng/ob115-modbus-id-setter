@@ -8,7 +8,7 @@ After some trial and error, the working combination is:
 
 - **Register:** `0x0524` (decimal 1316)
 - **Function code:** `0x10` (Write Multiple Registers) — `0x06` always returns exception code 7 (NAK)
-- **Value:** a single 16-bit unsigned integer (not a float, unlike the Eastron SDM120 it's often confused with)
+- **Value:** a single 16-bit unsigned integer
 
 This script wraps that sequence in a reusable utility: it reads the current ID, writes the new one, then verifies the change by reading back on the new ID.
 
@@ -32,7 +32,7 @@ Connect your RS485 adapter to the meter:
 |----------------|---------|
 | 10             | A / TX+/RX+ / D+ |
 | 9              | B / TX-/RX- / D-  |
-| 6              | GND (G485), optional but recommended on long runs |
+| 8              | GND (G485), optional but recommended on long runs |
 
 The meter must be powered (230V AC on terminals 1/2) for it to respond.
 
